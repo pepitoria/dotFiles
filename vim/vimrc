@@ -1,4 +1,4 @@
-""" set nocompatible
+"" set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -87,7 +87,7 @@ set incsearch " busqueda incremental
 set ignorecase " busqueda independiente de may/min...
 set smartcase " excepto si el termino tiene al menos una mayuscula
 
-""" Themes
+"" Themes
 set t_Co=256
 colorscheme beny
 set guifont=Monaco:h10
@@ -157,7 +157,7 @@ autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
-"""autocmd FileType javascript autocmd BufWritePre <buffer> :call JsBeautify()<CR>
+""autocmd FileType javascript autocmd BufWritePre <buffer> :call JsBeautify()<CR>
 
 if bufwinnr(1)
   map <c-j> 5<C-W>-
