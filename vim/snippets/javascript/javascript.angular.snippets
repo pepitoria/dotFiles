@@ -1,0 +1,172 @@
+#module
+snippet ngmod
+	/**
+	* @ngdoc module
+	* @name ${1:*/*/module Name}
+	* @module $1
+	* @description ${2}
+	*/
+	angular.module('$1',[${3}]);
+	${0}
+
+snippet ngconst
+	/**
+	* @ngdoc constant
+	* @name ${1}
+	* @module ${2}
+	* @description ${3}
+	*/
+	.constant('$1', {
+		${4}
+	})
+	${0}
+
+snippet ngservice
+	/**
+	* @ngdoc service
+	* @name ${1}
+	* @module ${2}
+	* @description ${3}
+	*/
+	.service('$1', [
+		${4}
+		function $1($4) {
+			'use strict';
+			${0}
+		}
+	]);
+
+snippet ngctrl
+	/**
+	* @ngdoc controller
+	* @name ${1: Controller Name}
+	* @module ${2: Module Name}
+	* @description ${3: Description}
+	*/
+	.controller('$1',[
+		'${4}',
+		function $1($4){
+			'use strict';
+
+			${0}
+		}
+	])
+snippet ngfactory
+	/**
+	 * @ngdoc service
+	 * @name ${1: Factory Name}
+	 * @module ${2: Module Name}
+	 * @description ${3: Description}
+	 */
+	.factory('$1',[
+		'${4}',
+		function $1($4){
+			'use strict';
+
+			var $1 = function (${5}) {
+				${0}
+			}
+
+			return $1;
+		}
+	])
+snippet ngprovider
+	/**
+	* @ngdoc provider
+	* @name ${1: providerName}
+	* @module ${2: moduleName}
+	*
+	* @description
+	* ${3:description}
+	*/
+	.provider('$1', [
+
+		function () {
+			'use strict';
+			this.\$get = [
+				${4: serviceDependencies}
+				function ($4) {
+					${0}
+				}
+			];
+		}
+	])
+snippet ngdir
+	/**
+	* @ngdoc directive
+	* @name ${1: Directive Name}
+	* @module ${2: Module Name}
+	* @description ${3: Description}
+	*/
+	.directive('$1',[
+		${4}
+		function $1($4){
+			'use strict';
+
+			return {
+				restrict: '${5:AE}',
+				replace: '${6:element}',
+				template : '${7}',
+				templateUrl: '${8}',
+				transclude: '${9}',
+				priority: '${10}',
+				scope: '${11}',
+				controller: function ($scope){${12}},
+				link: function ($scope, $element, $attrs, $ctrl) {${13}},
+				compile: function ($scope, $element, $attrs, $ctrl) {${14}}
+				${0}
+			};
+		}
+	])
+snippet dlink
+	link: function($scope, $element, $attrs, ${1:controller}) {
+		${2}
+	}${0}
+snippet dcontroller
+	controller: function ($scope) {
+		${1}
+	}${0}
+snippet describe
+	describe('${1}', function() {
+		${0}
+	});
+snippet it
+	it('${1}', function() {
+		${0}
+	});
+snippet log
+	console.log('${1}',${2});
+	${0}
+snippet afun
+	function (${1}) {
+		${0}
+	}
+snippet vfun
+	/**
+	* ${1}
+	*/
+	${2} = function $2(${3}) {
+		${0}
+	form-controls }
+
+snippet sfun
+	/**
+	* ${1}
+	*/
+	$scope.${2} = function $2(${3}) {
+		${0}
+	}
+
+snippet loren1
+	Sed a libero. Vivamus laoreet. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Fusce convallis metus id felis luctus adipiscing. Praesent congue erat at massa.Donec vitae sapien ut libero venenatis faucibus. Morbi mattis ullamcorper velit. Donec vitae orci sed dolor rutrum auctor. Donec mollis hendrerit risus. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.Etiam imperdiet imperdiet orci. Curabitur turpis. Nullam sagittis. Vivamus laoreet. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem.
+	${0}
+
+
+snippet instr
+	{
+		"id": "${1}",
+		"label": "${2}",
+		"description": "${3}",
+		"examples": ["${4}"],
+		"items": [${5}]
+	}${0}
