@@ -5,12 +5,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'skammer/vim-css-color'
+"" Plugin 'skammer/vim-css-color'
 "" Plugin 'autoclose'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'genutils'
+"" "Plugin 'genutils'
 "" Plugin 'closetag'
-Plugin 'tpope/vim-commentary'
+"" Plugin 'tpope/vim-commentary'
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
@@ -22,28 +22,28 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-rails'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-ragtag'
+"" Plugin 'tpope/vim-ragtag'
 Plugin 'syntastic'
 Plugin 'tabular'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'vim-less'
 Plugin 'vim-multiple-cursors'
-Plugin 'shougo/vimproc'
-Plugin 'shougo/vimshell'
+"" Plugin 'shougo/vimproc'
+"" Plugin 'shougo/vimshell'
 
 Plugin 'ervandew/supertab'
 
 "" Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'majutsushi/tagbar'
-Plugin 'xolox/vim-misc'
+"" Plugin 'SirVer/ultisnips'
+"" Plugin 'honza/vim-snippets'
+""Plugin 'powerline/powerline'
+"" Plugin 'majutsushi/tagbar'
+"" "Plugin 'xolox/vim-misc'
 "" Plugin 'xolox/vim-easytags'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'int3/vim-taglist-plus'
+"" Plugin 'fholgado/minibufexpl.vim'
+"" Plugin 'int3/vim-taglist-plus'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kylef/apiblueprint.vim'
+"" Plugin 'kylef/apiblueprint.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
@@ -113,6 +113,10 @@ set directory=~/.vim/_temp
 set nrformats=
 "" Disabling Angular html checker for syntastic
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty \<", "inserting implicit ", "unescaped \&" , "lacks \"action", "lacks value", "lacks \"src", "is not recognized!", "discarding unexpected", "replacing obsolete "]
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_conf="~/.vim/.jshintrc"
+let g:syntastic_javascript_jshint_args = '--config /Users/jaimebeneytez/.vim/.jshintrc'
+
 
 "" CtrlP Config
 let g:ctrlp_working_path_mode = 'r'
@@ -166,12 +170,19 @@ if bufwinnr(1)
   map <c-h> 5<C-W><
 endif
 
-let g:UltiSnipsExpandTrigger="<D-j>"
-let g:UltiSnipsJumpForwardTrigger="<D-j>"
-let g:UltiSnipsJumpBackwardTrigger="<D-k>"
-
-"" let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-"" noremap <silent> <leader>y :TagbarToggle <CR>
+let g:UltiSnipsExpandTrigger="<c-m>"
+let g:UltiSnipsJumpForwardTrigger="<c-m>"
+let g:UltiSnipsJumpBackwardTrigger="<c-n>"
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set shell=/bin/bash\ --rcfile\ /Users/jbeneytez/.bashrc
+
+nnoremap <D-LEFT> zf
+nnoremap <D-RIGHT> za
+
+nnoremap <D-j> :m .+1<CR>==
+nnoremap <D-k> :m .-2<CR>==
+inoremap <D-j> <Esc>:m .+1<CR>==gi
+inoremap <D-k> <Esc>:m .-2<CR>==gi
+vnoremap <D-j> :m '>+1<CR>gv=gv
+vnoremap <D-k> :m '<-2<CR>gv=gv

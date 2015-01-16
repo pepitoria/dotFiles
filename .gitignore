@@ -1,0 +1,13 @@
+.zsh-update
+.sh_history
+
+vim/_backup
+vim/_temp
+vim/after
+vim/bundle
+vim/node_modules
+
+zsh/.oh-my-zsh
+zsh/.zsh-update
+zsh/.zsh_history
+
