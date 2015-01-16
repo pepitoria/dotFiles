@@ -6,6 +6,7 @@ vim/_temp
 vim/after
 vim/bundle
 vim/node_modules
+vim/.netrwhist*
 
 zsh/.oh-my-zsh
 zsh/.zsh-update
