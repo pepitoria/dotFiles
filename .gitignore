@@ -24,7 +24,8 @@ tmp/
 vim/_backup
 vim/_temp
 vim/after
-vim/bundle
+vim/bundle/*
+!vim/bundle/Vundle.vim
 vim/node_modules
 vim/.netrwhist*
 
