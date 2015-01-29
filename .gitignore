@@ -1,3 +1,23 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+*~
+._*
+*.swp
+.sass-cache/
+/logs/
+bin/
+tmp/
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# customized
 .zsh-update
 .sh_history
 
@@ -11,4 +31,3 @@ vim/.netrwhist*
 zsh/.oh-my-zsh
 zsh/.zsh-update
 zsh/.zsh_history
-
